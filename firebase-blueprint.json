@@ -1,0 +1,120 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile with persistent level, XP, coins, social graph, inventory, stats, and campaign progress",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "name": { "type": "string", "maxLength": 100 },
+        "username": { "type": "string" },
+        "bio": { "type": "string" },
+        "avatar": { "type": "string" },
+        "level": { "type": "number" },
+        "xp": { "type": "number" },
+        "chips": { "type": "number" },
+        "gold": { "type": "number" },
+        "sovereigns": { "type": "number" },
+        "followers": { "type": "array" },
+        "following": { "type": "array" },
+        "friends": { "type": "array" },
+        "inventory": { "type": "array" },
+        "stats": { "type": "object" },
+        "conqueredTowns": { "type": "array" },
+        "campaignLevel": { "type": "number" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "name", "level", "xp"]
+    },
+    "Presence": {
+      "title": "Presence",
+      "description": "Real-time online visitor presence tracking",
+      "type": "object",
+      "properties": {
+        "visitorId": { "type": "string" },
+        "name": { "type": "string" },
+        "online": { "type": "boolean" },
+        "lastSeen": { "type": "string" }
+      },
+      "required": ["visitorId", "online", "lastSeen"]
+    },
+    "UniqueVisitor": {
+      "title": "UniqueVisitor",
+      "description": "Permanent unique visitor record across all time",
+      "type": "object",
+      "properties": {
+        "visitorId": { "type": "string" },
+        "name": { "type": "string" },
+        "firstSeen": { "type": "string" }
+      },
+      "required": ["visitorId", "firstSeen"]
+    },
+    "GlobalCounter": {
+      "title": "GlobalCounter",
+      "description": "Aggregated visitor stats like online now and all-time visitors",
+      "type": "object",
+      "properties": {
+        "allTimeVisitors": { "type": "number" },
+        "updatedAt": { "type": "string" }
+      }
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Real-time chat message",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "senderId": { "type": "string" },
+        "senderName": { "type": "string" },
+        "senderAvatar": { "type": "string" },
+        "text": { "type": "string", "maxLength": 1000 },
+        "channelId": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "senderId", "senderName", "text", "channelId", "createdAt"]
+    },
+    "MultiplayerRoom": {
+      "title": "MultiplayerRoom",
+      "description": "Real-time live multiplayer match state",
+      "type": "object",
+      "properties": {
+        "roomId": { "type": "string" },
+        "roomName": { "type": "string" },
+        "hostId": { "type": "string" },
+        "maxPlayers": { "type": "number" },
+        "status": { "type": "string" },
+        "players": { "type": "string" },
+        "gameState": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["roomId", "roomName", "hostId", "status"]
+    }
+  },
+  "firestore": {
+    "/user_profiles/{userId}": {
+      "schema": "UserProfile",
+      "description": "Cloud synced player profile and progression"
+    },
+    "/presence/{visitorId}": {
+      "schema": "Presence",
+      "description": "Live online presence records"
+    },
+    "/unique_visitors/{visitorId}": {
+      "schema": "UniqueVisitor",
+      "description": "Permanent unique visitors index"
+    },
+    "/stats/global": {
+      "schema": "GlobalCounter",
+      "description": "Global stats counter"
+    },
+    "/messages/{messageId}": {
+      "schema": "ChatMessage",
+      "description": "Real-time chat messages collection"
+    },
+    "/multiplayer_rooms/{roomId}": {
+      "schema": "MultiplayerRoom",
+      "description": "Active real-time multiplayer game room states"
+    }
+  }
+}

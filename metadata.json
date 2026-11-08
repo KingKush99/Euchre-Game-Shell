@@ -1,0 +1,6 @@
+{
+  "name": "Euchre Everything",
+  "description": "Euchre Paradise card adventure featuring 3D saloon campaign exploration, boss duels, custom hats shop, real estate empire, YouTube live streams, and Euchre card gameplay.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

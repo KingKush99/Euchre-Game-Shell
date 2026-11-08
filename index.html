@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Euchre Everything</title>
+    <meta name="description" content="Euchre Paradise card adventure featuring 3D saloon campaign exploration, boss duels, custom hats shop, real estate empire, YouTube live streams, and Euchre card gameplay." />
+    <script>
+      // Early error and rejection interceptor for third-party browser extensions (MetaMask, Phantom, Solana, etc.)
+      (function() {
+        var isWalletError = function(msg) {
+          if (!msg) return false;
+          var str = String(msg).toLowerCase();
+          return str.indexOf('metamask') !== -1 ||
+                 str.indexOf('ethereum') !== -1 ||
+                 str.indexOf('solana') !== -1 ||
+                 str.indexOf('phantom') !== -1 ||
+                 str.indexOf('user rejected') !== -1 ||
+                 str.indexOf('failed to connect') !== -1 ||
+                 str.indexOf('econnrefused') !== -1 ||
+                 str.indexOf('wallet') !== -1;
+        };
+
+        // Intercept console.error and console.warn for extension noise
+        var origError = console.error;
+        console.error = function() {
+          var args = Array.prototype.slice.call(arguments);
+          var joined = args.map(function(a) { return String(a); }).join(' ');
+          if (isWalletError(joined)) {
+            return;
+          }
+          if (origError) {
+            origError.apply(console, arguments);
+          }
+        };
+
+        var origWarn = console.warn;
+        console.warn = function() {
+          var args = Array.prototype.slice.call(arguments);
+          var joined = args.map(function(a) { return String(a); }).join(' ');
+          if (isWalletError(joined)) {
+            return;
+          }
+          if (origWarn) {
+            origWarn.apply(console, arguments);
+          }
+        };
+
+        window.addEventListener('error', function(e) {
+          var msg = (e && (e.message || e.filename || (e.error && (e.error.message || e.error.stack)))) || '';
+          if (isWalletError(msg)) {
+            e.preventDefault();
+            e.stopPropagation();
+            return true;
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(e) {
+          var reason = e.reason;
+          var msg = '';
+          if (typeof reason === 'string') {
+            msg = reason;
+          } else if (reason && typeof reason === 'object') {
+            msg = (reason.message || '') + ' ' + (reason.stack || '');
+            try { msg += ' ' + JSON.stringify(reason); } catch(err) {}
+          }
+          if (isWalletError(msg)) {
+            e.preventDefault();
+            e.stopPropagation();
+            return true;
+          }
+        }, true);
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Rye&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-stone-950 text-stone-100 antialiased overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

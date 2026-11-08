@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" width="500" height="700">
+  <defs>
+    <pattern id="stipple-blue" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="6" cy="6" r="1.2" fill="#0f1c48"/>
+    </pattern>
+  </defs>
+
+  <!-- White Cardstock Base -->
+  <rect x="8" y="8" width="484" height="684" rx="28" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Color Field -->
+  <rect x="28" y="28" width="444" height="644" rx="16" fill="#172b6b"/>
+  <rect x="28" y="28" width="444" height="644" rx="16" fill="url(#stipple-blue)"/>
+
+  <!-- Ornate White Filigree Borders -->
+  <rect x="36" y="36" width="428" height="628" rx="12" fill="none" stroke="#ffffff" stroke-width="3"/>
+  <rect x="42" y="42" width="416" height="616" rx="8" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+
+  <!-- Top Medallion: Angel on Bicycle -->
+  <g transform="translate(250, 200)">
+    <circle cx="0" cy="0" r="110" fill="#0f1c48" stroke="#ffffff" stroke-width="3.5"/>
+    <circle cx="0" cy="0" r="102" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <!-- Bicycle Wheel -->
+    <circle cx="0" cy="35" r="38" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+    <circle cx="0" cy="35" r="4" fill="#ffffff"/>
+    <!-- Angel Body -->
+    <circle cx="0" cy="-40" r="16" fill="#ffffff"/>
+    <ellipse cx="-26" cy="-30" rx="18" ry="9" transform="rotate(-25 -26 -30)" fill="#ffffff"/>
+    <ellipse cx="26" cy="-30" rx="18" ry="9" transform="rotate(25 26 -30)" fill="#ffffff"/>
+    <ellipse cx="0" cy="-10" rx="14" ry="20" fill="#ffffff"/>
+    <path d="M -8,5 L -14,20 L 0,35 M 8,5 L 14,20 L 0,35" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Center Hub: Radiating Bicycle Propeller -->
+  <g transform="translate(250, 350)">
+    <circle cx="0" cy="0" r="22" fill="#172b6b" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="0" cy="0" r="8" fill="#ffffff"/>
+    <path d="M -160,0 L 160,0 M 0,-20 L 0,20 M -120,-12 L 120,12 M -120,12 L 120,-12" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Bottom Medallion: Inverted Angel on Bicycle -->
+  <g transform="translate(250, 500) rotate(180)">
+    <circle cx="0" cy="0" r="110" fill="#0f1c48" stroke="#ffffff" stroke-width="3.5"/>
+    <circle cx="0" cy="0" r="102" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <!-- Bicycle Wheel -->
+    <circle cx="0" cy="35" r="38" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+    <circle cx="0" cy="35" r="4" fill="#ffffff"/>
+    <!-- Angel Body -->
+    <circle cx="0" cy="-40" r="16" fill="#ffffff"/>
+    <ellipse cx="-26" cy="-30" rx="18" ry="9" transform="rotate(-25 -26 -30)" fill="#ffffff"/>
+    <ellipse cx="26" cy="-30" rx="18" ry="9" transform="rotate(25 26 -30)" fill="#ffffff"/>
+    <ellipse cx="0" cy="-10" rx="14" ry="20" fill="#ffffff"/>
+    <path d="M -8,5 L -14,20 L 0,35 M 8,5 L 14,20 L 0,35" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>

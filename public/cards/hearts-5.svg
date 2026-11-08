@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 700" width="500" height="700">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer Cardstock with Corner Radii -->
+  <rect x="8" y="8" width="484" height="684" rx="28" fill="#ffffff" stroke="#cbd5e1" stroke-width="2.5" filter="url(#shadow)"/>
+  <rect x="22" y="22" width="456" height="656" rx="20" fill="none" stroke="#fee2e2" stroke-width="2"/>
+  <rect x="30" y="30" width="440" height="640" rx="16" fill="none" stroke="#fecdd3" stroke-width="1.5"/>
+
+  <!-- Top-Left Corner Index -->
+  <g transform="translate(62, 82)">
+    <text x="0" y="0" font-family="'Georgia', serif" font-size="52" font-weight="900" fill="#dc2626" text-anchor="middle">5</text>
+    <path d="M 0,-10 C -6,-28 -32,-28 -32,2 C -32,22 0,42 0,42 C 0,42 32,22 32,2 C 32,-28 6,-28 0,-10 Z" fill="#dc2626" transform="translate(0, 32) scale(0.45) " />
+  </g>
+
+  <!-- Center Card Artwork / Pips -->
+  
+      <g>
+        <path d="M 0,-10 C -6,-28 -32,-28 -32,2 C -32,22 0,42 0,42 C 0,42 32,22 32,2 C 32,-28 6,-28 0,-10 Z" fill="#dc2626" transform="translate(170, 220) scale(1.1) " />
+        <path d="M 0,-10 C -6,-28 -32,-28 -32,2 C -32,22 0,42 0,42 C 0,42 32,22 32,2 C 32,-28 6,-28 0,-10 Z" fill="#dc2626" transform="translate(330, 220) scale(1.1) " />
+        <path d="M 0,-10 C -6,-28 -32,-28 -32,2 C -32,22 0,42 0,42 C 0,42 32,22 32,2 C 32,-28 6,-28 0,-10 Z" fill="#dc2626" transform="translate(250, 350) scale(1.2) " />
+        <path d="M 0,-10 C -6,-28 -32,-28 -32,2 C -32,22 0,42 0,42 C 0,42 32,22 32,2 C 32,-28 6,-28 0,-10 Z" fill="#dc2626" transform="translate(170, 480) scale(1.1) rotate(180)" />
+        <path d="M 0,-10 C -6,-28 -32,-28 -32,2 C -32,22 0,42 0,42 C 0,42 32,22 32,2 C 32,-28 6,-28 0,-10 Z" fill="#dc2626" transform="translate(330, 480) scale(1.1) rotate(180)" />
+      </g>
+    
+
+  <!-- Bottom-Right Inverted Corner Index -->
+  <g transform="translate(438, 618) rotate(180)">
+    <text x="0" y="0" font-family="'Georgia', serif" font-size="52" font-weight="900" fill="#dc2626" text-anchor="middle">5</text>
+    <path d="M 0,-10 C -6,-28 -32,-28 -32,2 C -32,22 0,42 0,42 C 0,42 32,22 32,2 C 32,-28 6,-28 0,-10 Z" fill="#dc2626" transform="translate(0, 32) scale(0.45) " />
+  </g>
+</svg>
